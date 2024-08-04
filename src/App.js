@@ -5,7 +5,9 @@ import Home from './Components/Home';
 
 function App() {
   return (
-    <Home/>
+    <div style={{backgroundColor:'black'}}>
+      <Home/>
+    </div>
   )
 }
 

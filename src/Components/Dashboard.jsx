@@ -1,18 +1,21 @@
 import React from 'react';
-import { Card, Row, Col, Container, Badge, ProgressBar } from 'react-bootstrap';
+import { Card, Row, Col, Container, Badge, ProgressBar, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faTruck, faTimes, faDollarSign, faArrowUp, faArrowDown, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faTruck, faTimes, faDollarSign, faArrowUp, faArrowDown, faLocationArrow, faStar, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import BarChart from './BarChart';
+import CustomerTable from './CustomerTable';
+import CardComponent from './CardComponent';
 
 function App() {
   return (
-    <Container fluid style={{ border: "1px solid red" }} className='m-0 p-0'>
+    <Container fluid style={{ backgroundColor:'black' }} className='m-0 p-0'>
 
-      <Row className="gap-2">
-        <Card  bg="dark" style={{  maxWidth: '150px' }}>
-          <Card.Body>
+      <Row className="gap-1">
+  <Col  className="h-100 d-flex gap-2 mb-0 p-0" >
+  <Card  bg="dark">
+          <Card.Body >
             <Card.Text style={{ color: 'white', fontSize: '12px', whiteSpace: 'nowrap' }} >
-              <Row>
+              <Row >
                 <Col md={4}>
                   <FontAwesomeIcon icon={faShoppingCart} style={{ color: 'green', backgroundColor: 'white', padding: '5px', borderRadius: '5px' }} />
                   <br />
@@ -30,7 +33,7 @@ function App() {
         </Card>
 
 
-        <Card  bg="dark" style={{  maxWidth: '150px' }} >
+        <Card  bg="dark"  >
           <Card.Body>
             <Card.Text style={{ color: 'white', fontSize: '12px', whiteSpace: 'nowrap' }}>
               <Row>
@@ -51,7 +54,7 @@ function App() {
         </Card>
 
 
-        <Card  bg="dark" style={{  maxWidth: '150px' }}>
+        <Card  bg="dark" >
           <Card.Body>
             <Card.Text style={{ color: 'white', fontSize: '12px', whiteSpace: 'nowrap' }}>
               <Row>
@@ -72,7 +75,7 @@ function App() {
         </Card>
 
 
-        <Card  bg="dark" style={{  maxWidth: '150px' }}>
+        <Card  bg="dark">
           <Card.Body>
             <Card.Text style={{ color: 'white', fontSize: '12px', whiteSpace: 'nowrap' }}>
               <Row>
@@ -91,36 +94,39 @@ function App() {
             </Card.Text>
           </Card.Body>
         </Card>
+  </Col>
 
 
-        <Card  bg="dark" style={{ maxWidth: '500px' }}>
-          <Card.Body>
-            <Card.Text style={{ color: 'white', fontSize: '12px', whiteSpace: 'nowrap' }}>
+<Col className="m-0 p-0">
+<Card  bg="dark" >
+          <Card.Body className='m-0 p-0 '>
+            <Card.Text  style={{ color: 'white', fontSize: '12px', whiteSpace: 'nowrap'}}>
               <Row>
                 <Col md={4}>
                   <span style={{ color: 'white' }}>Net Profit</span>
-                  <h3 style={{ color: 'white' }}>$ 6759.25</h3>
+                  <h3 style={{ color: 'white',marginBottom: 0 }}>$ 6759.25</h3>
                   <span style={{ color: 'green' }}><FontAwesomeIcon icon={faArrowDown} /> 3%</span>
                 </Col>
                 <Col md={8} className="d-flex justify-content-end align-items-end">
                 <div className="circular-loader">
-      <svg width="120" height="120">
-        <circle cx="60" cy="60" r="50" fill="none" stroke="#e9ecef" strokeWidth="10" />
-        <circle cx="60" cy="60" r="50" fill="none" stroke="#007bff" strokeWidth="10" strokeDasharray="314" strokeDashoffset={(314 / 100) * (100 - 80)} />
-      </svg>
-      <div className="center-text">
-        <h5 style={{ color: 'white' }}>70% <br />
-        <span style={{fontSize:"10px"}}>Goal Completed</span>
-        </h5>
-        
-      </div>
-    </div>
+  <svg width="90" height="90">
+    <circle cx="45" cy="45" r="37.5" fill="none" stroke="#e9ecef" strokeWidth="7.5" />
+    <circle cx="45" cy="45" r="37.5" fill="none" stroke="#007bff" strokeWidth="7.5" strokeDasharray="235.5" strokeDashoffset={(235.5 / 100) * (100 - 70)} />
+  </svg>
+  <div className="center-text">
+    <h5 style={{ color: 'white' }}>70% <br />
+    <span style={{fontSize:"10px"}}>Goal</span>
+    <span style={{fontSize:"10px"}}>Completed</span>
+    </h5>
+  </div>
+</div>
 
                 </Col>
               </Row>
             </Card.Text>
           </Card.Body>
         </Card>
+</Col>
 
       </Row>
 
@@ -132,24 +138,42 @@ function App() {
           </Card.Body>
       </Card></Col>
 
-<Col style={{border:'1px solid black',gap:'100px'}}>
-<Card bg="dark" text="white" style={{border:'1px solid black',gap:'100px'}}>
-  <Card.Body gap={10}>
-    <Card.Title className="mb-2 d-flex align-items-center m-3">
-      <FontAwesomeIcon icon={faLocationArrow} size="2x" style={{ backgroundColor: 'lightred', borderRadius: 50, padding: 10, marginRight: 5, color: 'red' }} />
-      Location
-    </Card.Title>
-    <Card.Title className="mb-2 d-flex align-items-center m-3">
-      <FontAwesomeIcon icon={faLocationArrow} size="2x" style={{ backgroundColor: 'lightgreen', borderRadius: 50, padding: 10, marginRight: 5, color: 'green' }} />
-      Location
-    </Card.Title>
-    <Card.Title className="mb-2 d-flex align-items-center m-3">
-      <FontAwesomeIcon icon={faLocationArrow} size="2x" style={{ backgroundColor: 'lightblue', borderRadius: 50, padding: 10, marginRight: 5, color: 'blue' }} />
-      Location
-    </Card.Title>
-  </Card.Body>
-</Card>
-</Col>
+      <Col className='m-0 p-0'>
+      <Card bg="dark" text="white" className='m-0 p-0'>
+        <Card.Body gap={10} className='m-0 p-0'>
+          <Card.Title className="mb-2 d-flex justify-content-between align-items-center m-3">
+            <span>
+              <FontAwesomeIcon icon={faLocationArrow} size="1x" style={{ backgroundColor: 'lightgreen', borderRadius: 50, padding: 10, marginRight: 5, color: 'red', verticalAlign: 'middle' }} />
+             Goals
+            </span>
+            <FontAwesomeIcon icon={faChevronRight} size="1x" style={{ backgroundColor: 'gray', borderRadius: '50%', padding: 5, color: 'white' }} />
+          </Card.Title>
+          <Card.Title className="mb-2 d-flex justify-content-between align-items-center m-3">
+            <span>
+              <FontAwesomeIcon icon={faLocationArrow} size="1x" style={{ backgroundColor: 'lightgreen', borderRadius: 50, padding: 10, marginRight: 5, color: 'red', verticalAlign: 'middle' }} />
+             Popular Dishes
+            </span>
+            <FontAwesomeIcon icon={faChevronRight} size="1x" style={{ backgroundColor: 'gray', borderRadius: '50%', padding: 5, color: 'white' }} />
+          </Card.Title>
+          <Card.Title className="d-flex justify-content-between align-items-center m-3">
+            <span>
+              <FontAwesomeIcon icon={faLocationArrow} size="1x" style={{ backgroundColor: 'lightgreen', borderRadius: 50, padding: 10, marginRight: 5, color: 'red', verticalAlign: 'middle' }} />
+             Menus
+            </span>
+            <FontAwesomeIcon icon={faChevronRight} size="1x" style={{ backgroundColor: 'gray', borderRadius: '50%', padding: 5, color: 'white' }} />
+          </Card.Title>
+        </Card.Body>
+      </Card>
+    </Col>
+</Row>
+
+<Row className='mt-3 m-0 p-0' style={{ backgroundColor:'black' }}>
+  <Col md={9}>
+    <CustomerTable/>
+  </Col>
+  <Col md={3}>
+     <CardComponent/>
+  </Col>
 </Row>
     </Container>
   );

@@ -1,0 +1,30 @@
+/* CustomerTable.css */
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: none;
+}
+.table-bordered > thead > tr {
+  border-top: none;
+}
+
+.table-bordered > tbody > tr:last-child {
+  border-bottom: none;
+}
+.table-bordered > tbody > tr:last-child > td {
+  border: none;
+}
+
+.customer-image {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  table{
+    border-top: none;
+    border:none
+  }
+  

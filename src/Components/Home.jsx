@@ -5,13 +5,13 @@ import Sidebar from './Sidebar';
 
 const Home = () => {
   return (
-    <div className="containerw">
+    <div className="containerw" >
       <div className="sidebar">
         <Sidebar/>
       </div>
       <div className="main-content">
         <NavbarComponent />
-        <div className="body-content">
+        <div className="body-content" >
           <Dashboard/>
         </div>
       </div>

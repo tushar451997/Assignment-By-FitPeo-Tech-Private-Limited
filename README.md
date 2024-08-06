@@ -1,4 +1,12 @@
 Link:https://singular-sherbet-ddcb9b.netlify.app/
+Tech stack:
+-Reactjs
+-react-bootstrap
+-d3js
+-css
+-javascript 
+
+Due to time limit i am not able to complete the responsive design
 
 
 Assignment Steps:
